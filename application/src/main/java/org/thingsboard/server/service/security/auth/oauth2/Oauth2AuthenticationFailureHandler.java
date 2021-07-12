@@ -52,7 +52,7 @@ public class Oauth2AuthenticationFailureHandler extends SimpleUrlAuthenticationF
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest request,
-                                        HttpServletResponse response, javax.security.sasl.AuthenticationException exception)
+                                        HttpServletResponse response, org.springframework.security.core.AuthenticationException exception)
             throws IOException, ServletException {
         String baseUrl;
         String errorPrefix;
