@@ -35,8 +35,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-import java.lang.System;
-
 @Component(value = "oauth2AuthenticationFailureHandler")
 public class Oauth2AuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
@@ -68,6 +66,5 @@ public class Oauth2AuthenticationFailureHandler extends SimpleUrlAuthenticationF
         httpCookieOAuth2AuthorizationRequestRepository.removeAuthorizationRequestCookies(request, response);
         getRedirectStrategy().sendRedirect(request, response, baseUrl + errorPrefix +
                 URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8.toString()));
-        System.out.println("[1] oauth2 failed: " + exception.getMessage());
     }
 }
